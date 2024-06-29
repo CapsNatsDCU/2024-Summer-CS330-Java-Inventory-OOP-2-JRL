@@ -203,13 +203,13 @@ public class Armour extends Item {
     @Override
     public void read(Scanner snr)
     {
-        name = snr.next();
-        material = snr.next();
-        durability = snr.nextInt();
-        defense = snr.nextInt();
-        modifier = snr.next();
-        modifierLevel = snr.nextInt();
-        element = snr.next();
+        this.name = snr.next();
+        this.material = snr.next();
+        this.durability = snr.nextInt();
+        this.defense = snr.nextInt();
+        this.modifier = snr.next();
+        this.modifierLevel = snr.nextInt();
+        this.element = snr.next();
     }
 
     /**
@@ -240,10 +240,7 @@ public class Armour extends Item {
         if (this.isStackable() == true){ return false; }
         if (rhsItem.name != this.name){ return false; }
         if (rhsItem.material != this.material){ return false; }
-        if (rhsItem.durability != this.durability){ return false; }
-        if (rhsItem.defense != this.defense){ return false; }
         if (rhsItem.modifier != this.modifier){ return false; }
-        if (rhsItem.modifierLevel != this.modifierLevel){ return false; }
         if (rhsItem.element != this.element){ return false; }
 
         return true;
@@ -257,12 +254,9 @@ public class Armour extends Item {
     public int hashCode()
     {
         int hash = this.name.hashCode();
-        hash ^= material.hashCode();
-        hash ^= durability;
-        hash ^= defense;
-        hash ^= modifier.hashCode();
-        hash ^= modifierLevel;
-        hash ^= element.hashCode();
+        hash += material.hashCode();
+        hash += modifier.hashCode();
+        hash += element.hashCode();
         return hash;
     }
 

@@ -26,7 +26,6 @@ public class Consumable extends Item {
     public Consumable()
     {
         super();
-
         this.effect = "";
         this.uses   = 0;
     }
@@ -107,8 +106,11 @@ public class Consumable extends Item {
     @Override
     public Item clone()
     {
-        
-        return null;
+        Consumable luke = new Consumable;
+        luke.name = this.name;
+        luke.effect = this.effect;
+        luke.uses = this.uses;
+        return luke;
     }
 
     /**
@@ -138,8 +140,7 @@ public class Consumable extends Item {
     @Override
     public int hashCode()
     {
-        // Replace the next line
-        return -1;
+        return this.name.hashCode() + this.effect.hashCode();
     }
 
     /**
@@ -148,6 +149,11 @@ public class Consumable extends Item {
     @Override
     public String toString()
     {
-        return "";
+        StringBuilder s = new StringBuilder
+        s.append("  Nme: " + this.name);
+        s.append("  Eft: " + this.effect);
+        s.append("  Use: " + this.uses);
+        s.append("  Qty: " + this.super.quantity);
+        return s;
     }
 }
