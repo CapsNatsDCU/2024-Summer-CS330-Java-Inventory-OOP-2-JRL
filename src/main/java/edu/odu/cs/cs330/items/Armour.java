@@ -69,8 +69,6 @@ public class Armour extends Item {
         this.modifier = src.modifier;
         this.modifierLevel = src.modifierLevel;
         this.element = src.element;
-        System.out.println(this.toString());
-        System.out.println(src.toString());
     }
 
     /**

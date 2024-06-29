@@ -38,6 +38,9 @@ public class Consumable extends Item {
      */
     public Consumable(Consumable src)
     {
+        this.name = src.name;
+        this.effect = src.effect;
+        this.uses = src.uses;
 
     }
 
@@ -104,7 +107,7 @@ public class Consumable extends Item {
     @Override
     public Item clone()
     {
-        // Replace the next line
+        
         return null;
     }
 
