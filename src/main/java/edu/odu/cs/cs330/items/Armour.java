@@ -237,12 +237,15 @@ public class Armour extends Item {
         }
 
         Armour rhsItem = (Armour) rhs;
-        if (this.isStackable() == true){ return false; }
-        if (rhsItem.name != this.name){ return false; }
-        if (rhsItem.material != this.material){ return false; }
-        if (rhsItem.modifier != this.modifier){ return false; }
-        if (rhsItem.element != this.element){ return false; }
+        System.out.println(this.name + " vs " + rhsItem.name);
+        System.out.println("this"+this.toString()+"\n");
+        System.out.println("rhsItem"+rhsItem.toString()+"\n");
+        if (rhsItem.name != this.name){ System.out.println("returned false\n\n"); return false; }
+        if (rhsItem.material != this.material){ System.out.println("returned false\n\n"); return false; }
+        if (rhsItem.modifier != this.modifier){ System.out.println("returned false\n\n");return false; }
+        if (rhsItem.element != this.element){ System.out.println("returned false\n\n");return false; }
 
+        System.out.println("returned true\n\n");
         return true;
     }
 
@@ -253,10 +256,13 @@ public class Armour extends Item {
     @Override
     public int hashCode()
     {
-        int hash = this.name.hashCode();
-        hash += material.hashCode();
-        hash += modifier.hashCode();
-        hash += element.hashCode();
+        int hash = this.name.hashCode() + this.material.hashCode() + this.modifier.hashCode() + this.element.hashCode();
+        System.out.println(this.name);
+        System.out.println("name = " + this.name.hashCode());
+        System.out.println("mat = " + this.material.hashCode());
+        System.out.println("mod = " + this.modifier.hashCode());
+        System.out.println("ele = " + this.element.hashCode());
+        System.out.println("total = " + hash + "\n");
         return hash;
     }
 

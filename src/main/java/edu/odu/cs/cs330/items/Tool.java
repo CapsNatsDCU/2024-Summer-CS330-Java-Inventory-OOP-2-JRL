@@ -238,8 +238,8 @@ public class Tool extends Item {
         s.append("  Dur: " + this.durability +"\n");
         s.append("  Spd: " + this.speed +"\n");
         s.append("  Mtl: " + this.material +"\n");
-        s.append("  Mdr: " + this.modifier + "(Lvl " + this.modifierLevel + ")\n")
-        return s.toString;
+        s.append("  Mdr: " + this.modifier + " (Lvl " + this.modifierLevel + ")\n");
+        return s.toString();
     }
 }
 

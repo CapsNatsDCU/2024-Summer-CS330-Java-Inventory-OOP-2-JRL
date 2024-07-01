@@ -106,7 +106,7 @@ public class Consumable extends Item {
     @Override
     public Item clone()
     {
-        Consumable luke = new Consumable;
+        Consumable luke = new Consumable();
         luke.name = this.name;
         luke.effect = this.effect;
         luke.uses = this.uses;
@@ -118,6 +118,7 @@ public class Consumable extends Item {
      *
      * @param rhs object for which a comparison is desired
      */
+
     @Override
     public boolean equals(Object rhs)
     {
@@ -127,8 +128,9 @@ public class Consumable extends Item {
 
         Consumable rhsItem = (Consumable) rhs;
 
-        // Replace the next line
-        return false;
+        if (rhsItem.name != this.name){ return false; }
+        if (rhsItem.effect != this.effect){ return false; }
+        return true;
     }
 
     /**
@@ -140,7 +142,8 @@ public class Consumable extends Item {
     @Override
     public int hashCode()
     {
-        return this.name.hashCode() + this.effect.hashCode();
+        int hash = this.name.hashCode() + this.effect.hashCode();
+        return hash;
     }
 
     /**
@@ -149,11 +152,10 @@ public class Consumable extends Item {
     @Override
     public String toString()
     {
-        StringBuilder s = new StringBuilder
-        s.append("  Nme: " + this.name);
-        s.append("  Eft: " + this.effect);
-        s.append("  Use: " + this.uses);
-        s.append("  Qty: " + this.super.quantity);
-        return s;
+        StringBuilder sleep = new StringBuilder();
+        sleep.append("  Nme: " + this.name + "\n");
+        sleep.append("  Eft: " + this.effect + "\n");
+        sleep.append("  Use: " + this.uses + "\n");
+        return sleep.toString();
     }
 }
