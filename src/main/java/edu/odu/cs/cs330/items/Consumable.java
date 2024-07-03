@@ -128,8 +128,8 @@ public class Consumable extends Item {
 
         Consumable rhsItem = (Consumable) rhs;
 
-        if (rhsItem.name != this.name){ return false; }
-        if (rhsItem.effect != this.effect){ return false; }
+        if (!rhsItem.name.equals(this.name)){ return false; }
+        if (!rhsItem.effect.equals(this.effect)){ return false; }
         return true;
     }
 

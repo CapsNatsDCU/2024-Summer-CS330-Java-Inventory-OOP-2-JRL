@@ -220,7 +220,13 @@ public class Armour extends Item {
     public Item clone()
     {
         Armour juris = new Armour(this);
-        juris = this;
+        juris.name = this.name;
+        juris.durability = this.durability;
+        juris.defense = this.defense;
+        juris.material = this.material;
+        juris.modifier = this.modifier;
+        juris.modifierLevel = this.modifierLevel;
+        juris.element = this.element;
         return juris;
     }
 
