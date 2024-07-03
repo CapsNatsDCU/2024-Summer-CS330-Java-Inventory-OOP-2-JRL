@@ -139,34 +139,52 @@ public class TestArmour
     {
         Armour generic = new Armour();
 
+        //0
         assertThat(fancyArmour, not(equalTo(generic)));
+        System.out.println("test 0 passed");
 
         Armour imitation = (Armour) fancyArmour.clone();
 
+        //1
         imitation.setDurability(12);
         assertThat(fancyArmour, is(equalTo(imitation)));
+        System.out.println("test 1 passed");
 
+        //2
         imitation.setDefense(1234);
         assertThat(fancyArmour, is(equalTo(imitation)));
+        System.out.println("test 2 passed");
 
+        //3
         imitation.setModifierLevel(8888);
         assertThat(fancyArmour, is(equalTo(imitation)));
+        System.out.println("test 3 passed");
 
+        //4
         imitation.setName("More Fancy!");
+        System.out.println(fancyArmour.toString());
+        System.out.println(imitation.toString());
+        System.out.println(fancyArmour.equals(imitation));
         assertThat(fancyArmour, is(not(equalTo(imitation))));
+        System.out.println("test 4 passed");
 
+        //5
         imitation = (Armour) fancyArmour.clone();
         imitation.setMaterial("Nacho Cheese Doritos");
         assertThat(fancyArmour, is(not(equalTo(imitation))));
+        System.out.println("test 5 passed");
 
+        //6
         imitation = (Armour) fancyArmour.clone();
         imitation.setModifier("Eat more green vegetables");
         assertThat(fancyArmour, is(not(equalTo(imitation))));
-
+        System.out.println("test 6 passed");
+        //7
         imitation = (Armour) fancyArmour.clone();
         imitation.setElement("Aluminum");
         assertThat(fancyArmour, is(not(equalTo(imitation))));
-    }
+        System.out.println("all 7 tests passed");
+        }
 
     @Test
     public void testHashCode()
