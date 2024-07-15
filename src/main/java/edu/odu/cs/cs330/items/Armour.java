@@ -245,7 +245,7 @@ public class Armour extends Item {
 
         Armour rhsItem = (Armour) rhs;
 
-        System.out.println(rhsItem.name + " comp " + this.name);
+        
         
         if (!rhsItem.name.equals(this.name)) {
             return false;
